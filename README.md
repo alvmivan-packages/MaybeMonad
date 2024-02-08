@@ -45,7 +45,8 @@ var maybeNone = MaybeMonad<double>.None;
 var result = maybeWithValue
     .Select(value => value * 2)
     .Where(value => value > 50)
-    .Do(Console.WriteLine);
+    .Select(value => value.ToString())
+    .Do(Debug.Log);
 
 // More examples in the documentation...
 ```
